@@ -1,0 +1,63 @@
+.widgetSm {
+   flex: 1;
+   -webkit-box-shadow: 0px 0px 15px -10px rgb(0, 0, 0, .75); 
+   box-shadow: 0px 0px 15px -10px rgb(0, 0, 0, .75);
+   padding: 20px;
+   margin-right: 20px;
+}
+
+.widgetSmTitle {
+   font-style: 22px;
+   font-weight: 600;
+}
+
+.widgetSmListItem>img {
+   width: 40px;   
+   height: 40px;
+   border-radius: 50%;
+   object-fit: cover;
+}
+
+.widgetSmButton {
+   display: flex;
+   align-items: center;
+   border: none;
+   border-radius: 10px;
+   padding: 7px 10px;
+   background-color: #eef;
+   color: #555;
+   cursor: pointer;
+}
+
+.widgetSmList {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+
+.widgetSmUsage {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+
+}
+.widgetSmUsageTime{
+   font-weight: 300;
+}
+
+.widgetSmUsageAmount{
+   font-weight: 600;
+   padding: 0 5px;
+}
+
+.widgetSmListItem {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin: 20px 0;
+}
+
+.widgetSmIcon {
+   font-size: 16px!important;   
+}

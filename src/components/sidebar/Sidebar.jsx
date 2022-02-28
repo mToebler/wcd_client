@@ -15,10 +15,7 @@ export default function Sidebar() {
                     Analytics
                  </li>
                  <li className="sidebarListItem">
-                    Zones
-                 </li>
-                 <li className="sidebarListItem">
-                    Usage
+                    Irrigation Zones
                  </li>
                  <li className="sidebarListItem">
                     Weather

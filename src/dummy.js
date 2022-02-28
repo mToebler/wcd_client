@@ -71,4 +71,27 @@ export const usageData = [
       pv: 3908,
       amt: 2000,
     },
-   ];
+];
+
+const imgUrl1 = 'https://prod-media-photo.rach.io/1d6dd916-e2d2-42c7-967c-f66e661daaca';
+const imgUrl16 = 'https://prod-media-photo.rach.io/73f0fa14-8543-4a18-8d71-1a31a47ceb50'
+
+export const zoneRows = [
+   { id: 1, name: 'Back planter', description: 'Back planter, under stairs, and around BBQ', vegetation: 'shrubs', average: 12.3, imgUrl: imgUrl1},
+   { id: 2, name: 'Back planter', description: 'Back planter, under stairs, and around BBQ', vegetation: 'shrubs', average: 12.3, imgUrl: imgUrl16},
+   { id: 3, name: 'Back planter', description: 'Back planter, under stairs, and around BBQ', vegetation: 'shrubs', average: 12.3, imgUrl: imgUrl1},
+   { id: 4, name: 'Back planter', description: 'Back planter, under stairs, and around BBQ', vegetation: 'shrubs', average: 12.3, imgUrl: imgUrl16},
+   { id: 5, name: 'Back planter', description: 'Back planter, under stairs, and around BBQ', vegetation: 'shrubs', average: 12.3, imgUrl: imgUrl1},
+   { id: 6, name: 'Back planter', description: 'Back planter, under stairs, and around BBQ', vegetation: 'shrubs', average: 12.3, imgUrl: imgUrl16},
+   { id: 7, name: 'Back planter', description: 'Back planter, under stairs, and around BBQ', vegetation: 'shrubs', average: 12.3, imgUrl: imgUrl1},
+   { id: 8, name: 'Back planter', description: 'Back planter, under stairs, and around BBQ', vegetation: 'shrubs', average: 12.3, imgUrl: imgUrl16},
+   { id: 9, name: 'Back planter', description: 'Back planter, under stairs, and around BBQ', vegetation: 'shrubs', average: 12.3, imgUrl: imgUrl1},
+    { id: 10, name: 'Back planter', description: 'Back planter, under stairs, and around BBQ', vegetation: 'shrubs', average: 12.3, imgUrl: imgUrl16 },
+   { id: 11, name: 'Back planter', description: 'Back planter, under stairs, and around BBQ', vegetation: 'shrubs', average: 12.3, imgUrl: imgUrl1},
+   { id: 12, name: 'Back planter', description: 'Back planter, under stairs, and around BBQ', vegetation: 'shrubs', average: 12.3, imgUrl: imgUrl16},
+   { id: 13, name: 'Back planter', description: 'Back planter, under stairs, and around BBQ', vegetation: 'shrubs', average: 12.3, imgUrl: imgUrl1},
+   { id: 14, name: 'Back planter', description: 'Back planter, under stairs, and around BBQ', vegetation: 'shrubs', average: 12.3, imgUrl: imgUrl16},
+   { id: 15, name: 'Back planter', description: 'Back planter, under stairs, and around BBQ', vegetation: 'shrubs', average: 12.3, imgUrl: imgUrl1},
+   { id: 16, name: 'Back planter', description: 'Back planter, under stairs, and around BBQ', vegetation: 'shrubs', average: 12.3, imgUrl: imgUrl16},   
+ ];
+ 

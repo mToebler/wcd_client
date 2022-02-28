@@ -1,3 +1,34 @@
 .zoneList {
    flex: 4;
 }
+
+.zoneListZone {
+   display: flex;
+   align-items: center;
+}
+
+.zoneListImg {
+   height: 32px;
+   width: 32px;
+   border-radius: 50%;
+   object-fit: cover;
+   margin-right: 10px;
+}
+
+.actionsWrapper {
+   display: flex;
+   align-items: center;   
+}
+
+.zoneWaterButton, .zoneDisableButton {
+   height: 32px;
+   width: 32px;
+   border-radius: 50%;
+   object-fit: cover;   
+   margin-right: 5px;
+   cursor: pointer;   
+};
+
+.water, .disable {
+   color: darkblue;
+}

@@ -9,7 +9,7 @@ export default function Home() {
    return (
       <div className="home">
          <FeaturedInfo />
-         <Chart data={usageData} title='Water Analytics' grid dataKey='Monthly Usage' />
+         <Chart data={usageData} title='Water Usage' grid dataKey='Monthly Usage' />
          <div className="homeWidgets">
             <WidgetSm />
             <WidgetLg />

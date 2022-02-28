@@ -13,7 +13,7 @@ export default function WidgetLg() {
            </tr>
            <tr className="widgetLgTr">
               <td className="widgetLgZone">
-                 <img src="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" className="widgetLgImg" />
+                 <img src="https://prod-media-photo.rach.io/1d6dd916-e2d2-42c7-967c-f66e661daaca" alt="" className="widgetLgImg" />
                  <span className="widgetLgName">1. Back Planter</span>
               </td>
               <td className="widgetLgDate">25 Feb 2022  13:05</td>
@@ -22,7 +22,7 @@ export default function WidgetLg() {
            </tr>
            <tr className="widgetLgTr">
               <td className="widgetLgZone">
-                 <img src="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" className="widgetLgImg" />
+                 <img src="https://prod-media-photo.rach.io/1d6dd916-e2d2-42c7-967c-f66e661daaca" alt="" className="widgetLgImg" />
                  <span className="widgetLgName">1. Back Planter</span>
               </td>
               <td className="widgetLgDate">25 Feb 2022  13:05</td>
@@ -31,7 +31,7 @@ export default function WidgetLg() {
            </tr>
            <tr className="widgetLgTr">
               <td className="widgetLgZone">
-                 <img src="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" className="widgetLgImg" />
+                 <img src="https://prod-media-photo.rach.io/1d6dd916-e2d2-42c7-967c-f66e661daaca" alt="" className="widgetLgImg" />
                  <span className="widgetLgName">1. Back Planter</span>
               </td>
               <td className="widgetLgDate">25 Feb 2022  13:05</td>
@@ -40,7 +40,7 @@ export default function WidgetLg() {
            </tr>
            <tr className="widgetLgTr">
               <td className="widgetLgZone">
-                 <img src="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" className="widgetLgImg" />
+                 <img src="https://prod-media-photo.rach.io/1d6dd916-e2d2-42c7-967c-f66e661daaca" alt="" className="widgetLgImg" />
                  <span className="widgetLgName">1. Back Planter</span>
               </td>
               <td className="widgetLgDate">25 Feb 2022  13:05</td>

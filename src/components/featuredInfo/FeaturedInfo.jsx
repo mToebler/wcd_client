@@ -13,9 +13,9 @@ export default function FeaturedInfo() {
            <span className="featuredSub">Compared to last month</span>
         </div>
         <div className='featuredItem'>
-           <span className="featuredTitle">Weekly Usage</span>
+           <span className="featuredTitle">Monthly Usage</span>
            <div className="featuredMoneyContainer">
-              <span className="featuredMoney">1,134</span>
+              <span className="featuredMoney">16,134</span>
               <span className="featuredMoneyRate"> 17.5 <ArrowUpward className='featuredIcon' /></span>              
            </div>
            <span className="featuredSub">Compared to last year</span>
@@ -24,7 +24,7 @@ export default function FeaturedInfo() {
            <span className="featuredTitle">YTD Usage</span>
            <div className="featuredMoneyContainer">
               <span className="featuredMoney">22,134</span>
-              <span className="featuredMoneyRate">5.5<ArrowUpward className='featuredIcon positive' /></span>              
+              <span className="featuredMoneyRate">5.5<ArrowUpward className='featuredIcon' /></span>              
            </div>
            <span className="featuredSub">Compared to last year</span>
         </div>

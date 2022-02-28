@@ -1,0 +1,7 @@
+.weather {
+   flex: 5;
+   display: flex;
+   flex-direction: column;
+   align-items: space-between;
+   /* justify-content: space-between; */
+}

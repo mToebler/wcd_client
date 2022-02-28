@@ -1,0 +1,104 @@
+* {
+   font-family: 'Source Sans Pro', sans-serif;
+   margin: 0;
+   color: #555;
+}
+
+.zone {
+   flex: 5;
+   padding: 20px;
+}
+
+
+.zoneTitleContainer {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   color: #555;
+}
+
+.zoneActionButton {
+   width: 80px;
+   border: none;
+   padding: 5px;
+   background-color: #eef;
+   border-radius: 5px;
+   cursor: pointer;
+   color: #555;
+   font-size: 16px;
+}
+
+.zoneContainer {
+   display: flex;   
+   margin-top: 20px;
+}
+
+.zoneShow {
+   flex: 2;
+   padding: 25px;
+   -webkit-box-shadow: 0px 0px 15px -10px rgb(0, 0, 0, .75); 
+   box-shadow: 0px 0px 15px -10px rgb(0, 0, 0, .75);
+}
+.zoneShowTop {
+   display: flex;
+   align-items: center;
+}
+.zoneShowTopTitle{
+   display: flex;
+   flex-direction: column;
+}
+
+.zoneShowBottom {
+   margin-top: 20px; 
+}
+.zoneShowTitle {
+   font-style: 14px;
+   font-weight: 600;
+   color:#555;
+}
+.zoneShowName {
+   font-weight: 600;
+}
+.zoneShowDesc {
+   font-weight: 300;
+}
+
+.zoneShowInfo {
+   display: flex;
+   align-items: center;
+   margin: 20px 0px;
+   color: #444;
+}
+.zoneShowIcon {
+   font-size: 15px !important;
+}
+.zoneShowInfoTitle {
+   margin-left: 10px;
+}
+.zoneShowImage {
+   height: 80px;
+   width: 80px;
+   min-width: 80px;
+   border-radius: 50%;
+   object-fit: cover;
+   margin-right: 10px;
+}
+
+.zoneUpdate {
+   flex: 2;
+   padding: 20px;
+   -webkit-box-shadow: 0px 0px 15px -10px rgb(0, 0, 0, .75); 
+   box-shadow: 0px 0px 15px -10px rgb(0, 0, 0, .75);
+   margin-left: 20px;
+}
+
+.zoneAnalytics {
+   /* width: 100%; */
+   flex: 5;
+   display: flex;
+   flex-direction: column;   
+}
+
+.chart {
+   padding: 10px;
+}

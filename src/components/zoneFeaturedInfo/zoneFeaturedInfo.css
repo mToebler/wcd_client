@@ -2,6 +2,7 @@
    width: 100%;
    display: flex;
    justify-content: space-between;
+   margin-bottom: 20px;
 }
 
 .featuredItem {
@@ -16,6 +17,7 @@
 
 .featuredTitle {
    font-size: 20px;
+   color: #555;
 }
 
 .featuredMoneyContainer {
@@ -37,11 +39,11 @@
 .featuredIcon {
    font-size: 12px;
    margin-left: 15px;
-   color: green !important;
+   color: red;
 }
 
 .featuredIcon.negative {
-   color: red !important;
+   color: green;
 }
 
 .featuredSub {

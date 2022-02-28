@@ -1,0 +1,47 @@
+.currentConditions {
+   flex: 1;
+   display: flex;
+   margin: 0px 20px 20px 20px;
+   padding: 30px;
+   border-radius: 5px;
+   cursor: pointer; 
+   -webkit-box-shadow: 0px 0px 15px -10px rgb(0, 0, 0, .75); 
+   box-shadow: 0px 0px 15px -10px rgb(0, 0, 0, .75);
+}
+
+.leftContainer {
+   flex: 1;
+}
+.degreeInfo {
+   display: flex;
+   align-items: center;
+   padding: 20px; 
+}
+.currentTempIcon {
+   height: 80px;
+   width: 80px;
+   font-size:36px;
+   transform: scale(2.0);
+}
+.currentDegrees {
+   font-size: 50px;
+   padding-left: 20px;
+}
+.currentStatus {
+   font-weight: 300;
+   font-size: 36px;
+   padding-left: 15px;
+}
+.rightContainer {
+   flex: 1;
+}
+
+.weatherShowInfo {
+   display: flex;
+   align-items: center;
+   padding: 10px 0px;;
+}
+.weatherShowInfoTitle {
+   padding: 0px 5px;
+   font-weight: 300;
+}

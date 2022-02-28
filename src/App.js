@@ -2,9 +2,11 @@ import Topbar from "./components/topbar/Topbar";
 import Sidebar from "./components/sidebar/Sidebar";
 import Home from "./components/pages/home/Home";
 import ZoneList from "./components/pages/zoneList/ZoneList"
+import Zone from "./components/pages/zone/Zone"
+import Weather from "./components/pages/weather/Weather"
 import "./app.css";
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -18,6 +20,12 @@ function App() {
           </Route>
           <Route path="/zones">
             <ZoneList />
+          </Route>
+          <Route path="/zone/:zoneId">
+            <Zone />
+          </Route>
+          <Route path="/weather">
+            <Weather />
           </Route>
         </Switch>
       </div>

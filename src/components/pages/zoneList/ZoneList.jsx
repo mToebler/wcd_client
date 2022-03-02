@@ -1,65 +1,80 @@
 import './zoneList.css'
 import { DataGrid } from '@material-ui/data-grid';
-import { Opacity, SyncDisabled } from '@material-ui/icons'
-import { zoneRows } from '../../../dummy';
+import { Opacity, SyncDisabled, InfoOutlined } from '@material-ui/icons'
+// import { zoneRows } from '../../../dummy';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+// import { useState } from 'react';
+import React from 'react';
+import axios from 'axios';
 
-const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-   {
-      field: 'name', headerName: 'Zone', width: 135, renderCell: (params) => {
-         return (
-            <div className='zoneListZone'>
-               <img className='zoneListImg' src={params.row.imgUrl} alt='' />
-               Zone {params.row.id}
-        </div>
-     )
-  } },
-  { field: 'description', headerName: 'Description', width: 300 },
-  {
-    field: 'vegetation',
-    headerName: 'Vegetation type',    
-    width: 170,
-  },
-  {
-    field: 'average',
-    headerName: 'Average GPM',    
-    type: 'number',
-    width: 160,
-   },
-   {
-      field: 'action',
-      headerName: 'Actions',
-      width: 125,
-      renderCell: (params) => {
-         return (
-            <div className='actionsWrapper'>
-               <Link to={'/zone/'+params.row.id}>
-                  <button className='zoneWaterButton'><Opacity className='water' /></button>
-               </Link>
-            <button className='zoneDisableButton'><SyncDisabled className='disable'/></button>
-            </div>
-            
-         )
+export default class ZoneList extends React.Component {
+   state = { zones: [] };
+   
+   columns = [
+      { field: 'zoneNumber', headerName: 'Zones', width: 70 },
+      {
+         field: 'name', headerName: 'Name', width: 360 , renderCell: (params) => {
+            console.log("DEBUG", params.row.enabled);
+               return (
+                  <div className='zoneListZone'>
+                     <img className='zoneListImg' src={params.row.imageUrl} alt='' />
+                     {params.row.name}                     
+                  </div>
+               )
+            }
+      },
+      {
+         field: 'crop', headerName: 'Vegetation type', width: 170, renderCell: (params) => {
+            return (
+               <div className='zoneListCrop'>{params.row.customCrop['name']}</div>
+            )
+         }
+      },
+      {
+         field: 'enabled',
+         headerName: 'Enabled',    
+         type: 'boolean',
+         width: 160,
+         },
+         {
+            field: 'action',
+            headerName: 'Actions',
+            width: 125,
+            renderCell: (params) => {
+               return (
+                  <div className='actionsWrapper'>
+                     <Link to={'/zone/'+params.row.zoneNumber}>
+                        <button className='zoneInfoButton'><InfoOutlined /></button>
+                     </Link>                  
+                  </div>
+                  
+               )
+            }
       }
-  }
-];
+   ];
 
+   componentDidMount() {
+      // axios.get(`https://jsonplaceholder.typicode.com/users`)
+      axios.get(`http://localhost:3030/api/v1/rachio/zone`)
+        .then(res => {
+           const zones = res.data;
+           console.log(zones);
+          this.setState({ zones });
+        })
+    }
 
-export default function ZoneList() {
-   const [data, setData] = useState(zoneRows);
+   // const [data, setData] = useState(zoneRows);
 
-  return (
-     <div className='zoneList'>
-        <DataGrid
-        rows={data}
-        columns={columns}
-        pageSize={8}
-        rowsPerPageOptions={[8]}
-           checkboxSelection
-           disableSelectionOnClick
-      />
-    </div>
-  )
+   render() {
+      return (
+         <div className='zoneList'>
+            <DataGrid
+               rows={this.state.zones}
+               columns={this.columns}
+               pageSize={8}
+               rowsPerPageOptions={[8]}               
+            />
+         </div>
+      )
+   }
 }

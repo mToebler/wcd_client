@@ -4,11 +4,11 @@ import { CropOriginal, Check, Opacity, SquareFoot, Landscape, LocalFlorist, WbSu
 import { usageData } from '../../../dummy'
 import Chart from '../../chart/Chart'
 
-export default function Zone() {
+export default function Zone({id}) {
   return (
     <div className="zone">
       <div className="zoneTitleContainer">
-        <h1 className="zoneTitle">Zone Detail</h1>
+        <h1 className="zoneTitle">Zone {id} Detail</h1>
         <button className="zoneActionButton">action</button>
       </div>
       <div className="zoneContainer">
@@ -20,7 +20,7 @@ export default function Zone() {
               alt=""
             />
             <div className="zoneShowTopTitle">
-              <span className="zoneShowName">Zone 1</span>
+              <span className="zoneShowName">Zone {id}</span>
               <span className="zoneShowDesc">
                 Back planter, under stairs, and around BBQ
               </span>

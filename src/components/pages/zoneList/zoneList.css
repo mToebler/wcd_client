@@ -20,15 +20,18 @@
    align-items: center;   
 }
 
-.zoneWaterButton, .zoneDisableButton {
-   height: 32px;
-   width: 32px;
-   border-radius: 50%;
-   object-fit: cover;   
-   margin-right: 5px;
-   cursor: pointer;   
+.zoneInfoButton {
+   height: 36px;
+   width: 36px;
+   /* border-radius: 50%;
+   object-fit: cover;    */
+   border: 0;
+   background-color: inherit;
+   margin: 15px 10px 0px 10px;
+   color: #d1dbec;  
+   cursor: pointer; 
 };
 
-.water, .disable {
-   color: darkblue;
+.water {
+   color: red !important;   
 }

@@ -21,9 +21,8 @@ function App() {
           <Route path="/zones">
             <ZoneList />
           </Route>
-          <Route path="/zone/:zoneId">
-            <Zone />
-          </Route>
+          <Route path="/zone/:zoneId"
+            render={({ match }) => <Zone id={match.params.zoneId} />}/>                      
           <Route path="/weather">
             <Weather />
           </Route>

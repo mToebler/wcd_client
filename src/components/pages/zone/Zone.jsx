@@ -12,7 +12,7 @@ import {
   Watch
 } from "@material-ui/icons";
 import moment from "moment";
-import { usageData } from "../../../dummy";
+// import { usageData } from "../../../dummy";
 import Chart from "../../chart/Chart";
 import React from "react";
 import axios from "axios";
@@ -21,7 +21,7 @@ export default class Zone extends React.Component {
   
   constructor(props) {
     super(props);
-    this.state = { zone: {}, customNozzle: {}, customCrop: {}, customSoil: {}, customShade: {} };
+    this.state = { zone: {}, customNozzle: {}, customCrop: {}, customSoil: {}, customShade: {}, usageData: [] };
     this.id = this.props.id;
   }
   
@@ -47,6 +47,17 @@ export default class Zone extends React.Component {
         this.setState({ customSoil })
         this.setState({ customShade })
       });
+
+    axios
+      .get(`http://localhost:3030/api/v1/usage/monthly/${this.id}`)
+      .then((res) => {
+        const usageData = res.data;
+        
+        console.log('DEBUG:', usageData);
+        console.log('ZoneChartDebug:', usageData)
+        this.setState({ usageData });
+      });
+
   }
 
   render() {
@@ -125,10 +136,11 @@ export default class Zone extends React.Component {
           <div className="zoneAnalytics">
             <ZoneFeaturedInfo id={ this.props.id }/>
             <Chart
-              data={usageData}
+              data={this.state.usageData}
               title="Water Usage"
               grid
-              dataKey="Monthly Usage"
+              dataKey="usage"
+              aspect="3"
               className="chart"
             />
           </div>

@@ -13,8 +13,7 @@ export default class ZoneList extends React.Component {
    columns = [
       { field: 'zoneNumber', headerName: 'Zones', width: 70 },
       {
-         field: 'name', headerName: 'Name', width: 360 , renderCell: (params) => {
-            console.log("DEBUG", params.row.enabled);
+         field: 'name', headerName: 'Name', width: 360 , renderCell: (params) => {            
                return (
                   <div className='zoneListZone'>
                      <img className='zoneListImg' src={params.row.imageUrl} alt='' />

@@ -39,11 +39,11 @@
 .featuredIcon {
    font-size: 12px;
    margin-left: 15px;
-   color: red;
+   color: green;
 }
 
-.featuredIcon.negative {
-   color: green;
+.featuredIcon.warning {
+   color: red !important;
 }
 
 .featuredSub {

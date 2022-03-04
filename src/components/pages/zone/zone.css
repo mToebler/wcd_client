@@ -24,7 +24,7 @@
    background-color: #eef;
    border-radius: 5px;
    cursor: pointer;
-   color: #555;
+   color: #888;
    font-size: 16px;
 }
 
@@ -51,11 +51,33 @@
 .zoneShowBottom {
    margin-top: 20px; 
 }
+
+.zoneShowFooter {
+   margin-top: 5px; 
+}
+.zoneShowBottomContainer {
+   display: flex;
+   align-items: center;
+}
+.zoneShowBottomCol {
+   display: flex;
+   flex: 1;
+   flex-direction: column;
+   justify-content: space-between;
+   padding-left: 12px;
+}
+
 .zoneShowTitle {
-   font-style: 14px;
+   font-size: 16px;
    font-weight: 600;
    color:#555;
 }
+.zoneShowFooterTitle {
+   font-size: 14px;
+   font-weight: 600;
+   color:#555;
+}
+
 .zoneShowName {
    font-weight: 600;
 }
@@ -63,23 +85,38 @@
    font-weight: 300;
 }
 
+.hide {
+   display: none !important;
+}
+
 .zoneShowInfo {
    display: flex;
    align-items: center;
-   margin: 20px 0px;
+   margin: 10px 0px;
    color: #444;
 }
 .zoneShowIcon {
    font-size: 15px !important;
+   font-weight: bold;
 }
 .zoneShowInfoTitle {
-   margin-left: 10px;
+   font-size: 14px;
+   font-weight: 300;
+   margin-left: 5px;
 }
+.enabled {
+   color: green;
+}
+
+.disabled {
+   color: red;
+}
+
 .zoneShowImage {
-   height: 80px;
-   width: 80px;
+   height: 240px;
+   width: 240px;
    min-width: 80px;
-   border-radius: 50%;
+   border-radius: 5px;
    object-fit: cover;
    margin-right: 10px;
 }
@@ -101,4 +138,11 @@
 
 .chart {
    padding: 10px;
+}
+
+.capitalize {
+   text-transform: lowercase;
+}
+.capitalize::first-letter {
+   text-transform: capitalize;   
 }

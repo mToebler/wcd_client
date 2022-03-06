@@ -49,7 +49,7 @@
 }
 
 .zoneShowBottom {
-   margin-top: 20px; 
+   margin-top: 12px; 
 }
 
 .zoneShowFooter {
@@ -92,7 +92,7 @@
 .zoneShowInfo {
    display: flex;
    align-items: center;
-   margin: 10px 0px;
+   margin: 8px 0px;
    color: #444;
 }
 .zoneShowIcon {

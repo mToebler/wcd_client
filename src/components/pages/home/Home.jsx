@@ -11,25 +11,26 @@ export default class Home extends React.Component {
    constructor(props) {
       super(props);
       this.state = {
-        usageData: []
+         usageData: [],
+         usageData2: []
       };
     }
 
    componentDidMount() {
       axios
-         .get(`http://localhost:3030/api/v1/usage/monthly`)
+         .get(`http://localhost:3030/api/v1/usage/all/year`)
          .then((res) => {
-      const usageData = res.data;        
-      console.log('DEBUG:', usageData);
-      this.setState({ usageData });
-      });
-
+            const usageData = res.data;
+            console.log('DEBUG:', usageData);
+            this.setState({ usageData });
+         });      
    }
+   
    render() {
       return (
          <div className="home">
             <FeaturedInfo />
-            <Chart data={this.state.usageData} title='Irrigation Water Usage' grid dataKey='usage' aspect="5" />
+            <Chart data={this.state.usageData} title='Irrigation v. Total Usage in Gallons' grid dataKey='usage' dataKey2='totalUsage' aspect='5' />
             <div className="homeWidgets">
                <WidgetSm />
                <WidgetLg />

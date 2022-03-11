@@ -87,7 +87,7 @@ export default class FeaturedInfo extends React.Component {
             <div className='featuredItem'>
                <span className="featuredTitle">Last 7 Days </span>
                <div className="featuredMoneyContainer">
-                  <span className="featuredMoney">{ this.state.currentWeekUsage.usage }</span>
+                  <span className="featuredMoney">{ parseInt(this.state.currentWeekUsage.usage).toLocaleString("en-US") }</span>
                   <span className="featuredMoneyRate">
                      { parseFloat((1 - (this.state.weekUsageLastYear.usage/this.state.currentWeekUsage.usage)) * 100).toFixed(1) + '%'}
                      {arrow}
@@ -98,7 +98,7 @@ export default class FeaturedInfo extends React.Component {
             <div className='featuredItem'>
                <span className="featuredTitle">Last 30 Days</span>
                <div className="featuredMoneyContainer">
-                  <span className="featuredMoney">{this.state.currentMonthUsage.usage }</span>
+                  <span className="featuredMoney">{parseInt(this.state.currentMonthUsage.usage).toLocaleString("en-US")  }</span>
                   <span className="featuredMoneyRate">{parseFloat((1 - (this.state.monthUsageLastYear.usage / this.state.currentMonthUsage.usage)) * 100).toFixed(1) + '%'}
                      {monthArrow}
                   </span>
@@ -108,7 +108,7 @@ export default class FeaturedInfo extends React.Component {
             <div className='featuredItem'>
                <span className="featuredTitle">YTD Usage</span>
                <div className="featuredMoneyContainer">
-                  <span className="featuredMoney">{this.state.YTDUsage.usage} </span>
+                  <span className="featuredMoney">{parseInt(this.state.YTDUsage.usage).toLocaleString("en-US") } </span>
                   <span className="featuredMoneyRate">{parseFloat((1 - (this.state.YTDUsageLastYear.usage / this.state.YTDUsage.usage)) * 100).toFixed(1) + '%'}
                      {yearArrow}
                   </span>

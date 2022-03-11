@@ -6,7 +6,7 @@ import axios from 'axios';
 export default class FeaturedInfo extends React.Component {
    constructor(props) {
       super(props);
-      this.state = { currentWeekUsage: {}, weekUsageLastYear: {},currentMonthUsage: {}, monthUsageLastYear: {} };
+      this.state = { currentWeekUsage: {}, weekUsageLastYear: {}, currentMonthUsage: {}, monthUsageLastYear: {}, YTDUsageLastYear: {}, YTDUsage: {} };
    }  
    
    componentDidMount() {
@@ -43,11 +43,27 @@ export default class FeaturedInfo extends React.Component {
             console.log('FI DEBUG4:', this.state);
          });      
 
+      axios
+         .get(`http://localhost:3030/api/v1/flume/year/ytd`)
+         .then((res) => {
+            const YTDUsage = res.data[0];
+            this.setState({ YTDUsage });
+            console.log('FI DEBUG YTD:', this.state);
+         });      
+         
+      axios
+         .get(`http://localhost:3030/api/v1/flume/year/prevytd`)
+         .then((res) => {
+            const YTDUsageLastYear = res.data[0];
+            this.setState({ YTDUsageLastYear });
+            console.log('FI DEBUG YTDLast:', this.state);
+         });               
    }
 
    render() {
       let arrow;
       let monthArrow;
+      let yearArrow
       if (this.state.currentWeekUsage.usage < this.state.weekUsageLastYear.usage) {
         arrow = <ArrowDownward className="featuredIcon" />
       } else {
@@ -58,6 +74,12 @@ export default class FeaturedInfo extends React.Component {
          monthArrow = <ArrowDownward className="featuredIcon" />
        } else {
          monthArrow = <ArrowUpward className="featuredIcon warning" />
+       }
+   
+       if(this.state.YTDUsage.usage < this.state.YTDUsageLastYear.usage) {
+         yearArrow = <ArrowDownward className="featuredIcon" />
+       } else {
+         yearArrow = <ArrowUpward className="featuredIcon warning" />
        }
    
       return (
@@ -86,8 +108,10 @@ export default class FeaturedInfo extends React.Component {
             <div className='featuredItem'>
                <span className="featuredTitle">YTD Usage</span>
                <div className="featuredMoneyContainer">
-                  <span className="featuredMoney">22,134</span>
-                  <span className="featuredMoneyRate">5.5<ArrowUpward className='featuredIcon' /></span>
+                  <span className="featuredMoney">{this.state.YTDUsage.usage} </span>
+                  <span className="featuredMoneyRate">{parseFloat((1 - (this.state.YTDUsageLastYear.usage / this.state.YTDUsage.usage)) * 100).toFixed(1) + '%'}
+                     {yearArrow}
+                  </span>
                </div>
                <span className="featuredSub">Compared to last year</span>
             </div>

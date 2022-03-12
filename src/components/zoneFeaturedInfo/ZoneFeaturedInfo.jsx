@@ -12,8 +12,7 @@ export default class ZoneFeaturedInfo extends React.Component {
   }  
 
   componentDidMount() {
-    // axios.get(`https://jsonplaceholder.typicode.com/users`)
-    console.log("ZFI DEBUG ID: ", this.id);
+    // axios.get(`https://jsonplaceholder.typicode.com/users`)    
     axios
       .get(`http://localhost:3030/api/v1/usage/gpm/${this.id}`)
       .then((res) => {

@@ -5,20 +5,19 @@ import {WbSunny, Opacity, Speed, ArrowDownward, ArrowUpward} from '@material-ui/
 export default class WeeklyForcast extends React.Component {
    constructor(props) {
       super(props);      
-      console.log('WFF props', this.props)
-      console.log('WF props: ', this.props.forecast)      
-      console.log('WF all props:', this.props)
       this.options = { weekday: 'short' };
+      this.imgUrl = `https://www.metaweather.com/static/img/weather/c.svg`
    }
 
    render() {
-      console.log('WF forecast:', this.props.forecast);
-      console.log('WF forecast1:', this.props.forecast[1]);
       
       const dailyForecast = this.props.forecast.map((daily, index) =>
          <div className="day">
-            <div className="dailyDay">{Intl.DateTimeFormat('en-US', this.options).format(new Date(daily.applicable_date))}</div>
-            <div className="dailyIcon"><WbSunny /></div>
+            <div className="dailyDay">{Intl.DateTimeFormat('en-US', this.options).format(new Date(daily.applicable_date + 'T00:00:00'))}</div>
+            <div className="dailyIcon"><img src={`https://www.metaweather.com/static/img/weather/${daily.weather_state_abbr}.svg`}
+               alt={daily.weather_state_abbr}
+               height="24px" width="24px"
+            /></div>
             <div className="dailyStatus">{daily.weather_state_name}</div>
             <div className="dailyHiLo">{Math.round((daily.min_temp * 9 / 5) + 32)}° |  {Math.round((daily.max_temp * 9 / 5) + 32)}°</div>
          </div>

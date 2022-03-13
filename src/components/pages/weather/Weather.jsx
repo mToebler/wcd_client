@@ -36,7 +36,7 @@ export default class Weather extends React.Component {
     console.log('WW - forecast', this.state.forecast)
     return (
       <div className='weather'>
-        <CurrentConditions weather={ currentWeather } current={currentWeather.weather_state_name} temp={currentWeather.the_temp}/>
+        <CurrentConditions weather={currentWeather} current={currentWeather.weather_state_name} temp={currentWeather.the_temp} image_token={currentWeather.weather_state_abbr}/>
         <WeeklyForcast forecast={this.state.forecast}/>
       </div>
     )

@@ -7,7 +7,8 @@ export default class CurrentConditions extends React.Component {
     super(props)    
     // console.log('CC: props', this.props);
     this.current = this.props.current
-    console.log('CC weather Props:', this.props.weather)    
+    console.log('CC weather Props:', this.props.weather) 
+    this.image = this.props.image_token
   }
 
   render() {
@@ -16,7 +17,11 @@ export default class CurrentConditions extends React.Component {
         <div className="leftContainer">
           <h3> Las Vegas Current Conditions</h3>
           <div className='degreeInfo'>
-            <WbSunny className="currentTempIcon" />
+            <img src={`https://www.metaweather.com/static/img/weather/${this.image}.svg`}
+              alt={this.props.image_token}
+              height="24px" width="24px"
+              className="currentTempIcon"
+            />
             <span className="currentDegrees">{((this.props.weather.the_temp * 9/5) + 32).toFixed(1)}°</span>
           </div>
           <div className="currentStatus">

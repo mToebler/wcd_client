@@ -24,11 +24,13 @@
 .dailyDay {
    font-weight: 900;
    font-size: 20px;
-   padding-bottom: 25px;
+   padding-bottom: 60px;
 }
 .dailyIcon {
    transform: scale(3.0);
-   padding: 20px 0px;
+   /* padding: 20px 0px; */
+   padding-bottom: 20px;
+   height: 22px;
 }
 .dailyStatus {
    font-weight: 300;

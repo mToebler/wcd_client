@@ -27,9 +27,11 @@ export default function Sidebar() {
                     Weather
                  </li>
                  </Link>
+                 <Link to="/news" className="link">
                  <li className="sidebarListItem">
                     News
                  </li>
+                 </Link>
               </ul>
            </div>
         </div>

@@ -51,17 +51,14 @@ export default class Zone extends React.Component {
     axios
       .get(`http://localhost:3030/api/v1/usage/monthly/${this.id}`)
       .then((res) => {
-        const usageData = res.data;
-        
-        console.log('DEBUG:', usageData);
+        const usageData = res.data;        
         console.log('ZoneChartDebug:', usageData)
         this.setState({ usageData });
       });
 
   }
 
-  render() {
-    console.log("DEBUG: state:", this.state);
+  render() {    
     return (
       <div className="zone">
         <div className="zoneTitleContainer">

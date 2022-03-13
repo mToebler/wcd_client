@@ -23,7 +23,15 @@ export default class Home extends React.Component {
             const usageData = res.data;
             console.log('DEBUG:', usageData);
             this.setState({ usageData });
+         });   
+      
+      axios
+         .get(`http://localhost:3030/api/v1/flume`)
+         .then((res) => {
+            const usageData = res.data;
+            console.log('Initializing Flume:', usageData);            
          });      
+
    }
    
    render() {

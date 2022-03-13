@@ -12,7 +12,7 @@ export default class WeeklyForcast extends React.Component {
    render() {
       
       const dailyForecast = this.props.forecast.map((daily, index) =>
-         <div className="day">
+         <div key={ daily.id } className="day">
             <div className="dailyDay">{Intl.DateTimeFormat('en-US', this.options).format(new Date(daily.applicable_date + 'T00:00:00'))}</div>
             <div className="dailyIcon"><img src={`https://www.metaweather.com/static/img/weather/${daily.weather_state_abbr}.svg`}
                alt={daily.weather_state_abbr}

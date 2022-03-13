@@ -6,6 +6,7 @@ export default class NewsPreview extends Component {
   constructor(props) {
     super(props);
     this.state = { newsArray: [] };
+    console.log('constructor: props:', this.props);
   }
 
   componentDidMount() {
@@ -16,11 +17,16 @@ export default class NewsPreview extends Component {
     });
   }
 
+  onDivClick = (changeStory, urlMedia) =>{
+    this.props.setStoryText(changeStory)
+    this.props.setImageText(urlMedia)
+  }
+
   render() {
 
     const newsArray = this.state.newsArray;    
     const newsCards = newsArray.map((story, index) =>
-    <div className='previewCard'>
+      <div onClick={() => this.onDivClick(story.content, story.urlToImage)} className='previewCard' key={ story.publishedAt + index}>
       <h3 className='previewTitle'>
         {story.title}
       </h3>
@@ -34,7 +40,7 @@ export default class NewsPreview extends Component {
         </div>
         <div className='lowerByline'>
           <div className='author'>{story.author ? story.author : ''}</div>
-          <div className='date'>{story.publishedAt}</div>
+            <div className='date'>{String(story.publishedAt).slice(0, 10)} </div>
         </div>
       </div>
     </div>

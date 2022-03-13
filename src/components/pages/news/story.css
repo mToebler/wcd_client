@@ -1,3 +1,16 @@
 * {
   margin: 0px;  
 }
+
+.storyBigImage {
+  width: 90%;
+  /* height: 35vw;
+  width: fit-content; */
+  object-fit: cover;
+  border-radius: 10px;
+}
+.imageBigContainer {
+  width: 90% ;
+  border-radius: 10px;
+  padding:25px;
+}

@@ -1,9 +1,19 @@
 import './news.css';
-import React from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import Story from './Story';
 import NewsPreview from './NewsPreview'
+
 export default function News() {
+
+  const [storyText, setStoryText] = useState('Click a story from the right');
+
+  const [imageText, setImageText] = useState('Image here');
+
+  const storyClick = (event) => {
+    storyText = event.target.value;
+  }
+
   return (
     <div className='news'>
       <div className='newsTitleContainer'>
@@ -13,12 +23,13 @@ export default function News() {
         <div className='newsShow'>
           <div className="newsList">
             <div className="newsScroll">
-              <NewsPreview/>
+              <NewsPreview setStoryText={setStoryText} setImageText={setImageText}/>
             </div>
           </div>
         </div>
         <div className='newsStoryShow'>
-          <Story className='storyContainer' />
+          <Story className='storyContainer' storyText={storyText} imageText={imageText}
+        />
         </div>                
       </div>
     </div>

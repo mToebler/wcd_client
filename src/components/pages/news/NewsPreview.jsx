@@ -17,23 +17,24 @@ export default class NewsPreview extends Component {
     });
   }
 
-  onDivClick = (changeStory, urlMedia) =>{
+  onDivClick = (changeStory, urlMedia) => {
+    console.log('onDivCLick', urlMedia)
     this.props.setStoryText(changeStory)
-    this.props.setImageText(urlMedia)
+    this.props.setImageText(urlMedia.indexOf('ttp') + 1 ? urlMedia : `https://dummyimage.com/480x360/fff/000655.png&text=+WCD`)
   }
 
   render() {
 
     const newsArray = this.state.newsArray;    
     const newsCards = newsArray.map((story, index) =>
-      <div onClick={() => this.onDivClick(story.content, story.urlToImage)} className='previewCard' key={ story.publishedAt + index}>
+      <div onClick={() => this.onDivClick(story.content, (story.urlToImage ? story.urlToImage : story.source['name']))} className='previewCard' key={ story.publishedAt + index}>
       <h3 className='previewTitle'>
         {story.title}
       </h3>
       <div className='lowerDetails'>
         <div className='imgContainer'>
           <img
-          src={story.urlToImage}
+              src={story.urlToImage ? story.urlToImage : `https://dummyimage.com/480x360/fff/000655.png&text=+${story.source['name']}`}
           alt='Story Image'
           className='newsImage'
           />

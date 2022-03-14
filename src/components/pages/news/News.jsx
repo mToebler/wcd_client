@@ -8,7 +8,7 @@ export default function News() {
 
   const [storyText, setStoryText] = useState('Click a story from the right');
 
-  const [imageText, setImageText] = useState('Image here');
+  const [imageText, setImageText] = useState(`https://dummyimage.com/480x360/fff/000655.png&text=+WCD`);
 
   const storyClick = (event) => {
     storyText = event.target.value;

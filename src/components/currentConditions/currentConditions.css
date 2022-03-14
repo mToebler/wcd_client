@@ -19,18 +19,19 @@
 }
 .currentTempIcon {
    height: 45px;
-   width: 75px;
+   width: 45px;
    font-size:36px;
-   transform: scale(2.3);
+   transform: scale(2.5);
+   padding: 3px 0 0 12px;
 }
 .currentDegrees {
    font-size: 50px;
-   padding-left: 20px;
+   padding: 12px 0px 12px 58px;
 }
 .currentStatus {
    font-weight: 300;
    font-size: 34px;
-   padding-left: 68px;
+   padding-left: 46px;
 }
 .rightContainer {
    flex: 1;

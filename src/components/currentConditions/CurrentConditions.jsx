@@ -17,6 +17,11 @@ export default class CurrentConditions extends React.Component {
         <div className="leftContainer">
           <h3> Las Vegas Current Conditions</h3>
           <div className='degreeInfo'>
+          {/* <img src={`http://localhost:3030/img/anim8/${this.image}.gif`}
+              alt={this.props.image_token}
+              height="24px" width="24px"
+              className="currentTempIcon"
+            /> */}
             <img src={`https://www.metaweather.com/static/img/weather/${this.image}.svg`}
               alt={this.props.image_token}
               height="24px" width="24px"

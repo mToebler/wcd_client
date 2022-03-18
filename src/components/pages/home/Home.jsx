@@ -31,7 +31,6 @@ export default class Home extends React.Component {
             const usageData = res.data;
             console.log('Initializing Flume:', usageData);            
          });      
-
    }
    
    render() {

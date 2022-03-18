@@ -38,6 +38,10 @@
   justify-content: space-between;
   overflow: auto;
 }
+.disable-scrollbars::-webkit-scrollbar {
+  background: transparent;
+  width: 0px;
+}
 
 .newsStoryShow {  
     flex: 3;

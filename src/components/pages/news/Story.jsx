@@ -14,6 +14,9 @@ export default class Story extends Component {
           <img src={this.props.imageText ? this.props.imageText : `https://dummyimage.com/480x360/fff/000655.png&text=+WCD` } className='storyBigImage' alt='related media' />
         </div>
         <div>{this.props.storyText}</div>
+        <div className='storyLink'>
+          <a href={this.props.link} target='_blank'>Link to Full Story</a>
+        </div>
       </div>
     )
   }

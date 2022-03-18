@@ -8,6 +8,7 @@
   width: fit-content; */
   object-fit: cover;
   border-radius: 10px;
+  max-height: 186px;
 }
 .imageBigContainer {
   width: 90% ;
@@ -21,4 +22,8 @@
     padding-left: 20px;
     justify-content: center;
     align-items: center;
+}
+
+.storyLink {
+  padding-top: 40px;
 }

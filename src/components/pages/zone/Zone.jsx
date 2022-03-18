@@ -58,7 +58,8 @@ export default class Zone extends React.Component {
 
   }
 
-  render() {    
+  render() {
+    
     return (
       <div className="zone">
         <div className="zoneTitleContainer">
@@ -118,7 +119,9 @@ export default class Zone extends React.Component {
               <div className="zoneShowBottomCol">
                   <div className="zoneShowInfo">
                     <DateRange className="zoneShowIcon" />
-                    <span className="zoneShowInfoTitle">{moment(new Date(this.state.zone.lastWateredDate)).format("MMM d, YYYY")}</span>
+                    <span className="zoneShowInfoTitle">
+                      {moment(new Date(this.state.zone.lastWateredDate)).format("MMM Do YYYY")}                      
+                    </span>
                   </div>
                 </div>
                 <div className="zoneShowBottomCol">

@@ -10,7 +10,7 @@ export default class WidgetLg extends React.Component {
 
   componentDidMount() {
     var zones;
-    axios.get(`http://localhost:3030/api/v1/usage/recent/10`)
+    axios.get(`http://localhost:3030/api/v1/usage/recent/16`)
       .then((res) => {
       zones = res.data;
       console.log('widgetLg zones', zones);

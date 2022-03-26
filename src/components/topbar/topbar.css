@@ -23,6 +23,10 @@
    cursor: pointer;
 }
 
+.logo > a {
+   text-decoration: none;
+}
+
 .topright {
    display: flex;
    align-items: center;      

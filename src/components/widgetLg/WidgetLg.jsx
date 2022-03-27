@@ -23,9 +23,11 @@ export default class WidgetLg extends React.Component {
     const latestZoneInfo = this.state.zones.map((el, idx) =>       
       <tbody key={idx}>
         <tr className='widgetLgTr'>
-          <td className='widgetLgZone'>
+          <td className='widgetLgZone'>            
             <img src={el.img} alt='Zone: {el.name}' className='widgetLgImg' />
+            <a href={`/zone/${el.zone_id}`}>
             <span className='widgetLgName'>{el.name}</span>
+            </a>
           </td>
           <td className='widgetLgDate'>{el.start_time}</td>
           <td className='widgetLgDuration'>{el.duration['minutes']}</td>

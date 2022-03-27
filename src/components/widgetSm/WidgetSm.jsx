@@ -41,9 +41,9 @@ export default class WidgetSm extends React.Component {
     console.log('widgetSm: state', this.state)
     return (
       <div className='widgetSm'>
-              
-        <SimpleBarChart data={this.state.usageData} title='Latest Water Usage' grid dataKey='value' aspect='5'/>
-              
+        <div className='widgetSmChartContainer'>
+        <SimpleBarChart data={this.state.usageData} title='Current Water Usage' grid dataKey='value' aspect='2.5'/>
+        </div>
       </div>
     );
   }

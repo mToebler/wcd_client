@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './newsPreview.css';
 import axios from 'axios';
+import authHeader from '../../../services/auth.header'
 
 export default class NewsPreview extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ export default class NewsPreview extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:3030/api/v1/news`).then((res) => {
+    axios.get(`http://localhost:3030/api/v1/news`, { headers: authHeader() }).then((res) => {
       const newsArray = res.data;
       this.setState({ newsArray });
       console.log('newsPrev: state:', this.state);

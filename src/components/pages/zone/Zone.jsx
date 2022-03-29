@@ -16,6 +16,7 @@ import moment from "moment";
 import Chart from "../../chart/Chart";
 import React from "react";
 import axios from "axios";
+import authHeader from '../../../services/auth.header'
 
 export default class Zone extends React.Component {
   
@@ -30,7 +31,7 @@ export default class Zone extends React.Component {
     // axios.get(`https://jsonplaceholder.typicode.com/users`)
     console.log("DEBUG ID: ", this.id);
     axios
-      .get(`http://localhost:3030/api/v1/rachio/zone/${this.id}`)
+      .get(`http://localhost:3030/api/v1/rachio/zone/${this.id}`, { headers: authHeader() })
       .then((res) => {
         const zone = res.data;
         const customNozzle = zone['customNozzle'];
@@ -49,7 +50,7 @@ export default class Zone extends React.Component {
       });
 
     axios
-      .get(`http://localhost:3030/api/v1/usage/monthly/${this.id}`)
+      .get(`http://localhost:3030/api/v1/usage/monthly/${this.id}`, { headers: authHeader() })
       .then((res) => {
         const usageData = res.data;        
         console.log('ZoneChartDebug:', usageData)

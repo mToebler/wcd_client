@@ -6,6 +6,7 @@ import WidgetSm from '../../widgetSm/WidgetSm'
 import WidgetLg from '../../widgetLg/WidgetLg'
 import React from 'react'
 import axios from 'axios'
+import authHeader from '../../../services/auth.header'
 
 export default class Home extends React.Component {
    constructor(props) {
@@ -18,7 +19,7 @@ export default class Home extends React.Component {
 
    componentDidMount() {
       axios
-         .get(`http://localhost:3030/api/v1/usage/all/year`)
+         .get(`http://localhost:3030/api/v1/usage/all/year`, { headers: authHeader() })
          .then((res) => {
             const usageData = res.data;
             console.log('DEBUG:', usageData);
@@ -26,7 +27,7 @@ export default class Home extends React.Component {
          });   
       
       axios
-         .get(`http://localhost:3030/api/v1/flume`)
+         .get(`http://localhost:3030/api/v1/flume`, { headers: authHeader() })
          .then((res) => {
             const usageData = res.data;
             console.log('Initializing Flume:', usageData);            

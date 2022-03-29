@@ -1,0 +1,53 @@
+
+/*reset stuff*/
+*,
+*:before,
+*:after,
+ul,
+li,
+a,
+button,
+input,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+image,
+svg,
+path,
+g,
+canvas {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  /* font-family: 'Roboto'; */
+  user-select: none;
+  list-style: none;
+  position: relative;
+}
+
+
+
+.limiter {
+  -webkit-box-shadow: 0px 0px 15px -10px rgb(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgb(0, 0, 0, 0.75);
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20vh 35vw;
+}
+
+.container-login100 {
+  text-align: center;
+}
+
+
+.wrap-input100 {
+  padding: 10px;
+}

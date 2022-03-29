@@ -3,6 +3,7 @@ import axios from 'axios'
 import './weather.css'
 import CurrentConditions from '../../currentConditions/CurrentConditions'
 import WeeklyForcast from '../../weeklyForcast/WeeklyForcast'
+import authHeader from '../../../services/auth.header'
 
 export default class Weather extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ export default class Weather extends React.Component {
   componentDidMount() {
     // call weather
     axios
-      .get(`http://localhost:3030/api/v1/weather`)
+      .get(`http://localhost:3030/api/v1/weather`, { headers: authHeader() })
       .then((res) => {        
         const forecast = res.data;
         const currentWeather = forecast[0];

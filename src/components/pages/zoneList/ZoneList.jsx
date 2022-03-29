@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 // import { useState } from 'react';
 import React from 'react';
 import axios from 'axios';
+import authHeader from '../../../services/auth.header'
 
 export default class ZoneList extends React.Component {
    state = { zones: [] };
@@ -54,7 +55,7 @@ export default class ZoneList extends React.Component {
 
    componentDidMount() {
       // axios.get(`https://jsonplaceholder.typicode.com/users`)
-      axios.get(`http://localhost:3030/api/v1/rachio/zone`)
+      axios.get(`http://localhost:3030/api/v1/rachio/zone`, { headers: authHeader() })
         .then(res => {
            const zones = res.data;
            console.log(zones);

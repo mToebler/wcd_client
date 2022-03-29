@@ -1,6 +1,7 @@
 import React from 'react';
 import './widgetLg.css';
 import axios from 'axios';
+import authHeader from '../../services/auth.header'
 
 export default class WidgetLg extends React.Component {
   constructor(props) {
@@ -10,7 +11,7 @@ export default class WidgetLg extends React.Component {
 
   componentDidMount() {
     var zones;
-    axios.get(`http://localhost:3030/api/v1/usage/recent/16`)
+    axios.get(`http://localhost:3030/api/v1/usage/recent/16`, { headers: authHeader() })
       .then((res) => {
       zones = res.data;
       console.log('widgetLg zones', zones);

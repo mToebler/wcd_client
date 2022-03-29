@@ -2,6 +2,7 @@ import "./zoneFeaturedInfo.css";
 import { ArrowDownward, ArrowUpward } from "@material-ui/icons";
 import React from "react";
 import axios from "axios";
+import authHeader from '../../services/auth.header'
 
 export default class ZoneFeaturedInfo extends React.Component {
 
@@ -14,7 +15,7 @@ export default class ZoneFeaturedInfo extends React.Component {
   componentDidMount() {
     // axios.get(`https://jsonplaceholder.typicode.com/users`)    
     axios
-      .get(`http://localhost:3030/api/v1/usage/gpm/${this.id}`)
+      .get(`http://localhost:3030/api/v1/usage/gpm/${this.id}`, { headers: authHeader() })
       .then((res) => {
         const gpmTotal = res.data[0];
         const totalDuration = gpmTotal.duration;        
@@ -24,7 +25,7 @@ export default class ZoneFeaturedInfo extends React.Component {
       });
       
     axios
-      .get(`http://localhost:3030/api/v1/usage/gpm/${this.id}/current`)
+      .get(`http://localhost:3030/api/v1/usage/gpm/${this.id}/current`, { headers: authHeader() })
       .then((res) => {
         const gpmCurrent = res.data[0];
         const currentDuration = gpmCurrent.duration;        

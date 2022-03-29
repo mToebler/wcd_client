@@ -2,6 +2,7 @@ import React from 'react'
 import './featuredInfo.css'
 import { ArrowDownward, ArrowUpward } from '@material-ui/icons'
 import axios from 'axios';
+import authHeader from '../../services/auth.header'
 
 export default class FeaturedInfo extends React.Component {
    constructor(props) {
@@ -12,7 +13,7 @@ export default class FeaturedInfo extends React.Component {
    componentDidMount() {
       console.log("ZFI DEBUG ID: ", this.id);
       axios
-         .get(`http://localhost:3030/api/v1/flume/week/1`)
+         .get(`http://localhost:3030/api/v1/flume/week/1`, { headers: authHeader() })
          .then((res) => {
             const currentWeekUsage = res.data[0];
             this.setState({ currentWeekUsage });
@@ -20,7 +21,7 @@ export default class FeaturedInfo extends React.Component {
          });
       
       axios
-         .get(`http://localhost:3030/api/v1/flume/week/53`)
+         .get(`http://localhost:3030/api/v1/flume/week/53`, { headers: authHeader() })
          .then((res) => {
             const weekUsageLastYear = res.data[0];
             this.setState({ weekUsageLastYear });
@@ -28,7 +29,7 @@ export default class FeaturedInfo extends React.Component {
          });      
       
       axios
-         .get(`http://localhost:3030/api/v1/flume/month/0`)
+         .get(`http://localhost:3030/api/v1/flume/month/0`, { headers: authHeader() })
          .then((res) => {
             const currentMonthUsage = res.data[0];
             this.setState({ currentMonthUsage });
@@ -36,7 +37,7 @@ export default class FeaturedInfo extends React.Component {
          });      
       
       axios
-         .get(`http://localhost:3030/api/v1/flume/month/12`)
+         .get(`http://localhost:3030/api/v1/flume/month/12`, { headers: authHeader() })
          .then((res) => {
             const monthUsageLastYear = res.data[0];
             this.setState({ monthUsageLastYear });
@@ -44,7 +45,7 @@ export default class FeaturedInfo extends React.Component {
          });      
 
       axios
-         .get(`http://localhost:3030/api/v1/flume/year/ytd`)
+         .get(`http://localhost:3030/api/v1/flume/year/ytd`, { headers: authHeader() })
          .then((res) => {
             const YTDUsage = res.data[0];
             this.setState({ YTDUsage });
@@ -52,7 +53,7 @@ export default class FeaturedInfo extends React.Component {
          });      
          
       axios
-         .get(`http://localhost:3030/api/v1/flume/year/prevytd`)
+         .get(`http://localhost:3030/api/v1/flume/year/prevytd`, { headers: authHeader() })
          .then((res) => {
             const YTDUsageLastYear = res.data[0];
             this.setState({ YTDUsageLastYear });

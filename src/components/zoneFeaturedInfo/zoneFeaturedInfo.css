@@ -20,18 +20,18 @@
    color: #555;
 }
 
-.featuredMoneyContainer {
+.featuredInfoContainer {
    margin: 10px 0px;
    display: flex;
    align-items: center;
 }
 
-.featuredMoney {
+.featuredInfo {
    font-size: 30px;
    font-weight: 600;
 }
 
-.featuredMoneyRate {
+.featuredInfoRate {
    display: flex;
    align-items: center;
    margin-left: 20px;
@@ -48,4 +48,12 @@
 
 .featuredSub {
    color: gray;
+}
+
+.leakDetected {
+   color: red;
+}
+
+.noLeakDetected {
+   color: green;
 }

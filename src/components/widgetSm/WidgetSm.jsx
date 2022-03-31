@@ -3,7 +3,7 @@ import React from 'react';
 import { Visibility } from '@material-ui/icons';
 import axios from 'axios';
 import SimpleBarChart from '../chart/SimpleBarChart';
-import authHeader from '../../services/auth.header'
+import {authHeader} from '../../services/auth.header'
 
 export default class WidgetSm extends React.Component {
   constructor(props) {

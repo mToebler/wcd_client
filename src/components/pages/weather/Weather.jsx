@@ -3,7 +3,7 @@ import axios from 'axios'
 import './weather.css'
 import CurrentConditions from '../../currentConditions/CurrentConditions'
 import WeeklyForcast from '../../weeklyForcast/WeeklyForcast'
-import authHeader from '../../../services/auth.header'
+import {authHeader} from '../../../services/auth.header'
 
 export default class Weather extends React.Component {
   constructor(props) {

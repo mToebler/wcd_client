@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 // import { useState } from 'react';
 import React from 'react';
 import axios from 'axios';
-import authHeader from '../../../services/auth.header'
+import {authHeader} from '../../../services/auth.header'
 
 export default class ZoneList extends React.Component {
    state = { zones: [] };
@@ -18,7 +18,9 @@ export default class ZoneList extends React.Component {
                return (
                   <div className='zoneListZone'>
                      <img className='zoneListImg' src={params.row.imageUrl} alt='' />
-                     {params.row.name}                     
+                     <Link to={'/zone/'+params.row.zoneNumber}>
+                        {params.row.name}                     
+                     </Link>
                   </div>
                )
             }

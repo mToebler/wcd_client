@@ -1,7 +1,7 @@
 import React from 'react';
 import './widgetLg.css';
 import axios from 'axios';
-import authHeader from '../../services/auth.header'
+import {authHeader} from '../../services/auth.header'
 
 export default class WidgetLg extends React.Component {
   constructor(props) {

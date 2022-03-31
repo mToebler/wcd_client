@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './newsPreview.css';
 import axios from 'axios';
-import authHeader from '../../../services/auth.header'
+import {authHeader} from '../../../services/auth.header'
 
 export default class NewsPreview extends Component {
   constructor(props) {

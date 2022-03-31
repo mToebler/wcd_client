@@ -13,12 +13,16 @@ class Login extends Component {
     };
   }
 
+  componentDidMount() {
+    localStorage.clear()
+  }
+
   submitCredentials() {
     // const history = ();
     axios.put("http://localhost:3030/api/v1/login", { email: this.state.userEmail, password: this.state.userPw })
       .then((res) => {
         console.log('DEBUG res:', res);
-        if(res.status == 200) {
+        if( 200 <= res.status < 300 ) {
           localStorage.setItem("token", JSON.stringify(res.data.token))
           console.log('submitCreds: json str:', JSON.stringify(res.data.token))
           window.location.replace("/");          

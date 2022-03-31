@@ -2,7 +2,7 @@ import React from 'react'
 import './featuredInfo.css'
 import { ArrowDownward, ArrowUpward } from '@material-ui/icons'
 import axios from 'axios';
-import authHeader from '../../services/auth.header'
+import {authHeader} from '../../services/auth.header'
 
 export default class FeaturedInfo extends React.Component {
    constructor(props) {

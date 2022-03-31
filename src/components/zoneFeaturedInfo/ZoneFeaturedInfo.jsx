@@ -2,7 +2,7 @@ import "./zoneFeaturedInfo.css";
 import { ArrowDownward, ArrowUpward } from "@material-ui/icons";
 import React from "react";
 import axios from "axios";
-import authHeader from '../../services/auth.header'
+import {authHeader} from '../../services/auth.header'
 
 export default class ZoneFeaturedInfo extends React.Component {
 
@@ -33,6 +33,7 @@ export default class ZoneFeaturedInfo extends React.Component {
         this.setState({ currentDuration });
         console.log('ZFI DEBUG:', this.state);
       });
+        
   }
 
   render() {
@@ -42,26 +43,32 @@ export default class ZoneFeaturedInfo extends React.Component {
     } else {
       arrow = <ArrowUpward className="featuredIcon warning" />
     }
+    let leakAlert;
+    if(this.state.gpmCurrent.gpm / this.state.gpmTotal.gpm >= 1.1) {
+      leakAlert = <span className="leakDetected">Possible Leak Detected</span>      
+    } else {
+      leakAlert = <span className="noLeakDetected">No Leak Detected</span>      
+    }
 
     return (
       <div className="featured">
         <div className="featuredItem">
           <span className="featuredTitle">Current GPM</span>
-          <div className="featuredMoneyContainer">
-            <span className="featuredMoney">{parseFloat(this.state.gpmCurrent.gpm).toFixed(2)}</span>
-            <span className="featuredMoneyRate">
+          <div className="featuredInfoContainer">
+            <span className="featuredInfo">{parseFloat(this.state.gpmCurrent.gpm).toFixed(2)}</span>
+            <span className="featuredInfoRate">
               { parseFloat((1 - (this.state.gpmTotal.gpm/this.state.gpmCurrent.gpm)) * 100).toFixed(1) + '%'}
               {arrow}
             </span>
           </div>
-          <span className="featuredSub">Last Full Cycle</span>
+          <span className="featuredSub">Last cycle</span>
         </div>
         <div className="featuredItem">
           <span className="featuredTitle">Lifetime GPM</span>
-          <div className="featuredMoneyContainer">
-            <span className="featuredMoney">{parseFloat(this.state.gpmTotal.gpm).toFixed(2)}</span>
-            <span className="featuredMoneyRate">
-              {" "}              
+          <div className="featuredInfoContainer">
+            <span className="featuredInfo">{parseFloat(this.state.gpmTotal.gpm).toFixed(2)}</span>
+            <span className="featuredInfoRate">
+              {leakAlert}              
             </span>
           </div>
           <span className="featuredSub">Total time: {this.state.totalDuration.hours}:{this.state.totalDuration.minutes}</span>

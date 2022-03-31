@@ -2,7 +2,9 @@
    flex: 1;
    height: calc(91vh);
    position: sticky;
-   top: 50px;
+   top: 40px;
+   max-width: 16vw;
+   min-width: 16vw;
    background-color: #f0f5ff;
 }
 

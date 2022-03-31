@@ -9,6 +9,8 @@ import TimelineIcon from "@material-ui/icons/Timeline";
 import PersonIcon from "@material-ui/icons/PersonOutlined";
 
 export default function Topbar() {
+  let loginIcon;
+  
   return (
     <div className="topbar">
       <div className="topbarWrapper">
@@ -18,7 +20,7 @@ export default function Topbar() {
         <div className="topright">
           <div className="topbarIcons">
             <div className="topbarIconContainer">
-              <PersonIcon/>
+              <a href="/login"><PersonIcon/></a>
             </div>
           </div>
         </div>

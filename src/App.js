@@ -6,22 +6,18 @@ import Zone from "./components/pages/zone/Zone"
 import Weather from "./components/pages/weather/Weather"
 import News from "./components/pages/news/News"
 import Login from "./components/pages/login/Login"
+import { authHeader, checkLogin } from "./services/auth.header"
 import "./app.css";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-  var logged = false;
-  
-  if(localStorage.getItem("token")) {
-    logged = true;
-  }
-
-  if(!logged) {
+  // if(!checkLogin()) {
+  if(!true) {
     return (
       <div>
         <Topbar />
-        <Login />      
+        <Login />
       </div>
     )
   } else {
@@ -44,6 +40,9 @@ function App() {
             </Route>
             <Route path="/news">
               <News />
+            </Route>
+            <Route path="/login">
+              <Login />
             </Route>
           </Switch>
         </div>

@@ -6,7 +6,7 @@ import WidgetSm from '../../widgetSm/WidgetSm'
 import WidgetLg from '../../widgetLg/WidgetLg'
 import React from 'react'
 import axios from 'axios'
-import authHeader from '../../../services/auth.header'
+import {authHeader} from '../../../services/auth.header'
 
 export default class Home extends React.Component {
    constructor(props) {

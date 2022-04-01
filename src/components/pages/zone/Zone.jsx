@@ -30,6 +30,7 @@ export default class Zone extends React.Component {
       customSoil: {},
       customShade: {},
       usageData: [],
+      isWatering: {},
     };
     this.id = this.props.id;
   }
@@ -37,6 +38,8 @@ export default class Zone extends React.Component {
   componentDidMount() {
     // axios.get(`https://jsonplaceholder.typicode.com/users`)
     console.log('DEBUG ID: ', this.id);
+    this.setState({ isWatering: false });
+
     axios
       .get(`http://localhost:3030/api/v1/rachio/zone/${this.id}`, {
         headers: authHeader(),
@@ -69,26 +72,52 @@ export default class Zone extends React.Component {
       });
   }
 
+  startRachio() {
+    this.setState({ isWatering: true });
+    axios
+      .get(
+        `http://localhost:3030/api/v1/rachio/startzone/${this.state.zone.zoneNumber}/duration/180`,
+        {
+          headers: authHeader(),
+        }
+      )
+      .then((res) => {
+        console.log('startRachio res', res);
+        res
+          ? this.setState({ isWatering: true })
+          : this.setState({ isWatering: false });
+      });
+  }
+
   render() {
-    const prevZone = ( this.state.zone.zoneNumber - 1 ) < 1 ? 16 : ( this.state.zone.zoneNumber - 1 )
-    const nextZone = (this.state.zone.zoneNumber + 1) > 16 ? 1 : (this.state.zone.zoneNumber + 1)
-    
+    const prevZone =
+      this.state.zone.zoneNumber - 1 < 1 ? 16 : this.state.zone.zoneNumber - 1;
+    const nextZone =
+      this.state.zone.zoneNumber + 1 > 16 ? 1 : this.state.zone.zoneNumber + 1;
+
     return (
       <div className='zone'>
         <div className='zoneTitleContainer'>
           <div className='zoneTitleBrowserContainer'>
             <div className='zoneBrowserContainter'>
               <span className='browseleft'>
-                <a href={'/zone/' + prevZone}><ChevronLeft/></a>
+                <a href={'/zone/' + prevZone}>
+                  <ChevronLeft />
+                </a>
               </span>
               <span className='browseright'>
-              <a href={'/zone/' + nextZone}><ChevronRight/></a>
+                <a href={'/zone/' + nextZone}>
+                  <ChevronRight />
+                </a>
               </span>
             </div>
             <h1 className='zoneTitle'>{this.state.zone.name}</h1>
           </div>
-          <button className='zoneActionButton'>
-            {this.state.zone.enabled ? 'disable' : 'enable'}
+          <button
+            className='zoneActionButton'
+            onClick={this.startRachio.bind(this)}
+          >
+            {this.state.isWatering ? 'watering' : 'start'}
           </button>
         </div>
         <div className='zoneContainer'>

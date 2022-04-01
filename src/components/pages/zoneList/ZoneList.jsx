@@ -14,7 +14,7 @@ export default class ZoneList extends React.Component {
    columns = [
       { field: 'zoneNumber', headerName: 'Zones', width: 70 },
       {
-         field: 'name', headerName: 'Name', width: 360 , renderCell: (params) => {            
+         field: 'name', headerName: 'Name', width: 390 , renderCell: (params) => {            
                return (
                   <div className='zoneListZone'>
                      <img className='zoneListImg' src={params.row.imageUrl} alt='' />
@@ -26,7 +26,7 @@ export default class ZoneList extends React.Component {
             }
       },
       {
-         field: 'crop', headerName: 'Vegetation type', width: 170, renderCell: (params) => {
+         field: 'crop', headerName: 'Vegetation type', width: 190, renderCell: (params) => {
             return (
                <div className='zoneListCrop'>{params.row.customCrop['name']}</div>
             )
@@ -40,8 +40,8 @@ export default class ZoneList extends React.Component {
          },
          {
             field: 'action',
-            headerName: 'Actions',
-            width: 125,
+            headerName: 'More Info',
+            width: 145,
             renderCell: (params) => {
                return (
                   <div className='actionsWrapper'>
